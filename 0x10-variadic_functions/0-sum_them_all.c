@@ -6,9 +6,11 @@
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	unsigned int c, res = 0;
 	va_list num_arg;
-	
+	unsigned int c, res = 0;
+
+	if (n == 0)
+		return (0);
 	va_start(num_arg, n);
 	for (c = 0; c < n; c++)
 		res += va_arg(num_arg, int);
